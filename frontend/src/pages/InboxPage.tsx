@@ -192,21 +192,21 @@ const InboxPage: React.FC = () => {
                       </ListItemAvatar>
                       <ListItemText
                         primary={
-                          <Box display="flex" justifyContent="space-between" mb={0.5}>
-                            <Typography variant="subtitle2" fontWeight={email.read ? 600 : 800} noWrap sx={{ maxWidth: 180 }}>
+                          <Box component="span" display="flex" justifyContent="space-between" mb={0.5}>
+                            <Typography component="span" variant="subtitle2" fontWeight={email.read ? 600 : 800} noWrap sx={{ maxWidth: 180, display: 'inline-block' }}>
                               {email.senderName}
                             </Typography>
-                            <Typography variant="caption" color={email.read ? 'text.secondary' : 'primary.main'} fontWeight={email.read ? 400 : 700}>
+                            <Typography component="span" variant="caption" color={email.read ? 'text.secondary' : 'primary.main'} fontWeight={email.read ? 400 : 700}>
                               {email.date}
                             </Typography>
                           </Box>
                         }
                         secondary={
-                          <Box>
-                            <Typography variant="body2" color="text.primary" fontWeight={email.read ? 400 : 600} noWrap mb={0.5}>
+                          <Box component="span" display="block">
+                            <Typography component="span" variant="body2" color="text.primary" fontWeight={email.read ? 400 : 600} noWrap mb={0.5} sx={{ display: 'block' }}>
                               {email.subject}
                             </Typography>
-                            <Typography variant="caption" color="text.secondary" noWrap display="block">
+                            <Typography component="span" variant="caption" color="text.secondary" noWrap display="block">
                               {email.snippet}
                             </Typography>
                           </Box>

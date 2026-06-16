@@ -151,7 +151,7 @@ export class ApprovalService {
 
     const { rows } = await query<any>(
       `UPDATE approvals
-       SET status = COALESCE($1, status),
+       SET status = COALESCE($1::text::approval_status, status),
            comments = CASE WHEN $2::text IS NOT NULL THEN CONCAT(COALESCE(comments, ''), E'\\n', $2::text) ELSE comments END,
            updated_at = NOW()
        WHERE id = $3

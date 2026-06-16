@@ -96,7 +96,7 @@ export class TaskService {
          title, email_subject, email_sender, description, 
          priority, due_date, assigned_to, created_by, status
        ) 
-       VALUES ($1, $2, $3, $4, COALESCE($5, 'medium'), $6, $7, $8, COALESCE($9, 'todo')) 
+       VALUES ($1, $2, $3, $4, COALESCE($5::text, 'medium')::task_priority, $6, $7, $8, COALESCE($9::text, 'todo')::task_status) 
        RETURNING *`,
       [
         data.title,
